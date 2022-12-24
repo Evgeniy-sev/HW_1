@@ -1,3 +1,3 @@
-# HW_1
-webapp async
+# HW_1 <p>
+webapp async <p>
 Проект создан в Pycharm.
