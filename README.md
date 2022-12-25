@@ -1,6 +1,14 @@
-# HW_1 <p>
-webapp FastAPI with SQLAlchemy Async ORM <p>
-РџСЂРѕРµРєС‚ СЃРѕР·РґР°РЅ РІ Pycharm.<p><p>
+# HW_1
+webapp FastAPI with SQLAlchemy Async ORM
+Pycharm 2021.3.3  Python 3.6
+Точка входа: main.py
+Запуск проекта: uvicorn main:app --reload , запускается на 8080 порту.
+Приложена тестовая база sqlite  test_sales.db, таблицы с тестовыми данными.
+Приложение creat_base.py для заполнения таблиц базы тестовыми данными. Запускается при необходимости вручную.
+Запрос 127.0.0.1:8080/stores/ ответ json json {"id": x, "address": "x"}
+Запрос 127.0.0.1:8080/items/ ответ json {"id": x, "name": "x", "price" : x }
+Запрос 127.0.0.1:8080/stores/top/ ответ json {"store_id": x, "store_address": "x", "sum_sale" : x } топ-10 магазинов по выручке за текущий месяц
+Запрос 127.0.0.1:8080/items/top/ ответ json {"item_id": x, "item_name": x, "item_amount" : x} топ-10 товаров по количеству продаж за текущий месяц
+Запрос 127.0.0.1:8080/sales/  post json {'store_id':x,'item_id':x}  ввод в таблицу продажи, ответ {'ok': True} или {'alarm': текст исключения}
+При post запросе обрабатывается исключение ForeignKeyConstraint на id items и id stores.
 
-РўРѕС‡РєР° РІС…РѕРґР°:  main.py<p>
-Р—Р°РїСѓСЃРє РїСЂРѕРµРєС‚Р°:   uvicorn main:app --reload <p>
