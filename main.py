@@ -1,4 +1,3 @@
-import asyncio
 import uvicorn as uvicorn
 from fastapi import FastAPI
 from fastapi.responses import JSONResponse
@@ -63,7 +62,7 @@ class Sales(Base):        #   продажи
         ForeignKeyConstraint(['item_id'], ["item.id"]),
         ForeignKeyConstraint(['store_id'], ["store.id"]),
     )
-    
+
     def __repr__(self):
         return "[id={0}, sale_time={1}, item_id={2}, store_id={3}]".format(
             self.id,
