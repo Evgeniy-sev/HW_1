@@ -115,7 +115,8 @@ async def items():
 
 @app.get('/stores/top/') #  путь http://127.0.0.1:8080/stores/top/
 async def stores_top():
-    query = await session.execute(select(Sales.store_id, Store.address.label('store_address'), func.sum(Item.price).label('sum_sale'))
+    query = await session.execute(select(Sales.store_id, Store.address.label('store_address'), func.sum(Item.price)
+                                  .label('sum_sale'))
                                   .where(extract('month', Sales.sale_time) == datetime.today().month)
                                   .join(Item, Sales.item_id == Item.id)
                                   .join(Store, Sales.store_id == Store.id)
